@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS songs (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    artist VARCHAR(255) NOT NULL,
+    album VARCHAR(255),
+    genre VARCHAR(100)
+);
+
+CREATE TABLE IF NOT EXISTS user_preferences (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    preferred_genre VARCHAR(100),
+    preferred_artist VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS recommendations (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    song_id BIGINT NOT NULL,
+    recommendation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (song_id) REFERENCES songs(id)
+); 
