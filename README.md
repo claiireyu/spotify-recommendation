@@ -18,3 +18,5 @@ A java microservice that provides Spotify song recommendation
 ## Database
 
 - aws rds mysql
+
+![Unit Tests](https://github.com/{owner}/{repo}/actions/workflows/test.yml/badge.svg)
