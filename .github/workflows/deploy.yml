@@ -34,9 +34,9 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: your-aws-region
+        aws-region: us-east-2
 
     - name: Login to Amazon ECR
       id: login-ecr
@@ -64,6 +64,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-service-task-definition@v2
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: song-recommendation
+        service: song-recommendation-service
         cluster: song-recommendation-cluster2
         wait-for-service-stability: true
