@@ -1,5 +1,6 @@
 {
   "family": "song-recommendation",
+  "executionRoleArn": "arn:aws:iam::340752819470:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "song-recommendation",
