@@ -4,17 +4,36 @@
 
 ### Input
 - List of song objects with basic metadata:
+  - Title
   - Genre
   - Artist
-  - Release year
+  - Album
 
 ### Output
-- List of recommended songs sorted by similarity
+- List of recommended songs sorted by similarity score
+- Genre distribution analysis via /genre-distribution endpoint
+- Artist distribution analysis via /artist-distribution endpoint
+- Available songs listing via /available endpoint
+- Configurable limit for number of recommendations returned (default: 10)
 
 ### Features
-- Simple content-based recommendation system
-- Matches based on basic metadata
-- Initial focus on easily obtainable data points
+- Content-based recommendation system analyzing user's music profile
+- Matches based on aggregated preferences from inputted songs:
+  - Specifically, genre preferences (derived from frequency analysis)
+- Genre diversity analysis and weighting:
+  - Analyzes genre distribution in user's target songs
+  - Identifies preferred genres (>30% representation)
+  - Ensures recommendations reflect user's genre diversity
+- Artist diversity analysis and weighting:
+  - Identifies frequent artist (>1 time in input songs)
+  - Prioritizes songs from frequent artists
+
+### Scoring System
+- Genre Match: 0.6 (60%)
+  - Full weight (0.6) for songs matching preferred genres
+- Artist Match: 0.4 (40%)
+  - Full weight (0.4) for preferred artists (appearing multiple times in target songs)
+  
 
 ## Phase 2: Advanced Weighted Scoring System
 

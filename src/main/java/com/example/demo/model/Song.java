@@ -1,56 +1,28 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.Objects;
 
 @Entity
 @Table(name = "songs")
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Column(nullable = false)
     private String title;
+    
+    @Column(nullable = false)
     private String artist;
+    
+    @Column
     private String album;
+    
+    @Column(nullable = false)
     private String genre;
-
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getArtist() {
-        return artist;
-    }
-
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(String album) {
-        this.album = album;
-    }
 } 
