@@ -1,4 +1,4 @@
-# spotify-recommendation
+# song-recommendation
 A java microservice that provides Spotify song recommendation
 
 ## Tech Stack
