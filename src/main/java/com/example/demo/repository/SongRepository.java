@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface SongRepository extends JpaRepository<Song, Long> {
+    List<Song> findByArtist(String artist);
+    List<Song> findByGenre(String genre);
     
     @Query("SELECT s FROM Song s WHERE " +
            "s.genre = :genre OR " +
