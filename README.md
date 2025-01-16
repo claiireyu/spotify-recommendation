@@ -1,5 +1,6 @@
 # song-recommendation
-A java microservice that provides Spotify song recommendation
+This project analyzes user-inputted songs to recommend similar tracks based on genre and artist. Built with a microservice architecture using Spring Boot, the application is containerized with Docker, utilizes MySQL for data storage, and employs GitHub Actions for continuous integration. It is deployed on AWS ECS.
+
 
 ## Tech Stack
 
@@ -7,16 +8,18 @@ A java microservice that provides Spotify song recommendation
 - Maven
 - Docker
 - MySQL
-- kubernetes
+- AWS IAM
+- ECR
+- ECS
+
 
 ## CICD
 
 - GitHub Actions to build and test the application
-- GitHub Actions to deploy the application to aws eks
+- GitHub Actions to deploy the application to AWS EKS
 
 
 ## Database
 
-- aws rds mysql
-
+- AWS RDS MySQL
 
